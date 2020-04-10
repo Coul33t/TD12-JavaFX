@@ -115,15 +115,20 @@ public class Main extends Application {
 		mainVBox.setFillWidth(false);
 		
 		/* ----------------------- Etape 5 ----------------------- */
+		// Label, TextField et ListView pour la police
 		Label police = new Label("Police :");
 		TextField policeSelectionnee = new TextField();
 		ListView<String> policeSelection = new ListView<>();
 		
+		// Mettre la liste des polices utilisables dans la ListView
 		ObservableList<String> toutesLesPolices = FXCollections.observableArrayList(javafx.scene.text.Font.getFamilies());
 		policeSelection.setItems(toutesLesPolices);
+		
+		// Définir une taille min et max pour l'affichage de la ListView
 		policeSelection.setMinHeight(5 * LISTVIEW_CELL_HEIGHT);
 		policeSelection.setMaxHeight(5 * LISTVIEW_CELL_HEIGHT);
 		
+		// Petite astuce pour pas passer 3h à régler les positions à la main
 		VBox vboxPolice = new VBox();
 		
 		vboxPolice.getChildren().addAll(police, policeSelectionnee,
